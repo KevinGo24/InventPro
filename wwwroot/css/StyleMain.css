@@ -168,6 +168,24 @@ main[role="main"] {
     text-align: center;
 }
 
+.nav-login {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #ffffff;
+    color: #0f766e !important;
+    font-weight: 600;
+    padding: 8px 18px !important;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.nav-login:hover {
+    background-color: #5eead4;
+    color: #0f766e !important;
+}
+
+
 .footer .container {
     display: flex;
     align-items: center;
@@ -188,3 +206,4 @@ main[role="main"] {
     color: #0d5f58;
     text-decoration: underline;
 }
+

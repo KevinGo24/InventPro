@@ -1,18 +1,55 @@
-@model TModel
-
 @{
-    Layout = null;
+    ViewData["Title"] = "Login";
 }
-
 <!DOCTYPE html>
 
-<html>
-<head>
-    <title>title</title>
-</head>
-<body>
-<div>
-      
-</div>
-</body>
-</html>
+<table class="login-table">
+    <tr>
+        <td colspan="2" class="login-header">
+            <h2>Iniciar Sesión en InventPro</h2>
+        </td>
+    </tr>
+    <tr>
+        <td class="login-side">
+            <div class="box">
+                <i class="bi bi-box-seam box-icon"></i>
+            </div>
+            <p class="box-text">
+                Gestiona tu inventario de forma simple, rápida y organizada.
+                Controla existencias, movimientos y reportes desde un solo lugar.
+            </p>
+        </td>
+        <td class="login-form-cell">
+            <form class="login-form">
+                <h3>Bienvenido de nuevo</h3>
+
+                <label for="email">Correo electrónico</label>
+                <div class="input-icon-wrapper">
+                    <i class="bi bi-envelope input-icon"></i>
+                    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                </div>
+
+                <label for="password">Contraseña</label>
+                <div class="input-icon-wrapper">
+                    <i class="bi bi-lock input-icon"></i>
+                    <input type="password" id="password" name="password" placeholder="••••••••" required>
+                </div>
+
+                <div class="login-options">
+                    <label class="remember">
+                        <input type="checkbox" name="remember">
+                        <i class="bi bi-check2-square"></i> Recordarme
+                    </label>
+                    <a href="#" class="forgot-link">
+                        <i class="bi bi-question-circle"></i> ¿Olvidaste tu contraseña?
+                    </a>
+                </div>
+
+                <button type="submit" class="btn-primary btn-login">
+                    <i class="bi bi-box-arrow-in-right"></i> Iniciar sesión
+                </button>
+            </form>
+        </td>
+    </tr>
+</table>
+
