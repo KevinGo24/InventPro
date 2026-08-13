@@ -1,0 +1,123 @@
+.hero-section {
+  max-width: 640px;
+  margin: 80px auto;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 20px;
+  background-color: #0f766e;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.25);
+}
+
+.hero-icon i {
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.hero-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0f766e;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: #0f766e;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #0d5f58;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(15, 118, 110, 0.3);
+}
+
+.btn-secondary {
+  background-color: #f1f5f9;
+  color: #0f766e;
+  border: 1px solid #cbd5e1;
+}
+
+.btn-secondary:hover {
+  background-color: #e2e8f0;
+}
+
+.page-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.hero-section {
+  max-width: 640px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.info-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 20px;
+  table-layout: fixed;
+}
+
+.info-table td {
+  width: 50%;
+  padding: 0;
+  border: none;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.box {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 400px;
+  background-color: #0f766e;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.2);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  margin: 0 auto;
+}
