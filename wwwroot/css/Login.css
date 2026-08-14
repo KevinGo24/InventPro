@@ -57,7 +57,13 @@
     max-width: 320px;
     margin: 0 auto;
 }
-
+.Photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     
+    display: block;
+    border-radius: 10px;
+}
 /* Celda derecha - 50% */
 .login-form-cell {
     width: 50%;

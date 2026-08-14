@@ -15,17 +15,15 @@ body {
 .navbar {
     background-color: #0f766e;
     padding: 14px 32px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .container-fluid {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: nowrap; /* evita que el contenido se baje a una nueva línea */
     width: 100%;
+    gap: 20px;
 }
 
 /* Marca / Logo */
@@ -119,7 +117,22 @@ body {
 .navbar-toggler-icon::after {
     top: 6px;
 }
+.navbar-collapse {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+    gap: 20px;
+}
 
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 8px;
+    flex-wrap: nowrap;
+}
 /* Responsive */
 @media (max-width: 576px) {
     .navbar-toggler {

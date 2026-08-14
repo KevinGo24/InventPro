@@ -1,0 +1,190 @@
+@{
+    Layout = null;
+    ViewData["Title"] = "Dashboard";
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - InventPro</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="~/css/StyleMain.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Dash.css" asp-append-version="true" />
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <!-- Sidebar de navegación (controla qué "vista" se muestra) -->
+    <aside class="dashboard-sidebar">
+        <div class="sidebar-brand">
+            <i class="bi bi-box-seam"></i> InventPro
+        </div>
+        <nav class="sidebar-nav">
+            <button class="sidebar-link active" data-view="resumen" onclick="mostrarVista('resumen', this)">
+                <i class="bi bi-speedometer2"></i> Resumen
+            </button>
+            <button class="sidebar-link" data-view="productos" onclick="mostrarVista('productos', this)">
+                <i class="bi bi-boxes"></i> Productos
+            </button>
+            <button class="sidebar-link" data-view="movimientos" onclick="mostrarVista('movimientos', this)">
+                <i class="bi bi-arrow-left-right"></i> Movimientos
+            </button>
+            <button class="sidebar-link" data-view="reportes" onclick="mostrarVista('reportes', this)">
+                <i class="bi bi-graph-up-arrow"></i> Reportes
+            </button>
+        </nav>
+        <div class="sidebar-footer">
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="sidebar-link logout-link">
+                <i class="bi bi-box-arrow-right"></i> Salir
+            </a>
+        </div>
+    </aside>
+
+    <!-- Contenido principal (aquí se "cambian" las vistas, como un MultiView) -->
+    <main class="dashboard-content">
+
+        <!-- Vista: Resumen -->
+        <section id="view-resumen" class="dashboard-view active-view">
+            <h2 class="view-title">Resumen General</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="bi bi-boxes stat-icon"></i>
+                    <div class="stat-value">1,248</div>
+                    <div class="stat-label">Productos totales</div>
+                </div>
+                <div class="stat-card">
+                    <i class="bi bi-exclamation-triangle stat-icon warning"></i>
+                    <div class="stat-value">12</div>
+                    <div class="stat-label">Stock bajo</div>
+                </div>
+                <div class="stat-card">
+                    <i class="bi bi-arrow-down-circle stat-icon"></i>
+                    <div class="stat-value">340</div>
+                    <div class="stat-label">Entradas del mes</div>
+                </div>
+                <div class="stat-card">
+                    <i class="bi bi-arrow-up-circle stat-icon"></i>
+                    <div class="stat-value">287</div>
+                    <div class="stat-label">Salidas del mes</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vista: Productos -->
+        <section id="view-productos" class="dashboard-view">
+            <h2 class="view-title">Productos</h2>
+            <table class="dashboard-table">
+                <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Categoría</th>
+                    <th>Stock</th>
+                    <th>Precio</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Teclado mecánico</td>
+                    <td>Periféricos</td>
+                    <td>45</td>
+                    <td>$120.000</td>
+                </tr>
+                <tr>
+                    <td>Monitor 24"</td>
+                    <td>Pantallas</td>
+                    <td>18</td>
+                    <td>$450.000</td>
+                </tr>
+                </tbody>
+            </table>
+            <section id="view-resumen" class="dashboard-view active-view">
+    <h2 class="view-title">Resumen General</h2>
+
+    <div class="stats-grid">
+        <!-- tus 4 stat-cards, tal cual las tienes -->
+    </div>
+
+    <!-- NUEVO: tabla de datos debajo de las tarjetas -->
+    <div class="table-section">
+        <div class="table-header">
+            <h3 class="table-title">Últimos movimientos</h3>
+            <a href="#" class="table-link" onclick="mostrarVista('movimientos', document.querySelector('[data-view=movimientos]')); return false;">
+                Ver todos <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+        <table class="dashboard-table">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Tipo</th>
+                    <th>Cantidad</th>
+                    <th>Fecha</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Teclado mecánico</td>
+                    <td><span class="badge badge-in">Entrada</span></td>
+                    <td>25</td>
+                    <td>14/08/2026</td>
+                    <td><span class="status status-ok">Completado</span></td>
+                </tr>
+                <tr>
+                    <td>Monitor 24"</td>
+                    <td><span class="badge badge-out">Salida</span></td>
+                    <td>8</td>
+                    <td>13/08/2026</td>
+                    <td><span class="status status-ok">Completado</span></td>
+                </tr>
+                <tr>
+                    <td>Mouse inalámbrico</td>
+                    <td><span class="badge badge-in">Entrada</span></td>
+                    <td>50</td>
+                    <td>13/08/2026</td>
+                    <td><span class="status status-pending">Pendiente</span></td>
+                </tr>
+                <tr>
+                    <td>Silla ergonómica</td>
+                    <td><span class="badge badge-out">Salida</span></td>
+                    <td>3</td>
+                    <td>12/08/2026</td>
+                    <td><span class="status status-ok">Completado</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+        </section>
+
+        <!-- Vista: Movimientos -->
+        <section id="view-movimientos" class="dashboard-view">
+            <h2 class="view-title">Movimientos Recientes</h2>
+            <p class="view-placeholder">Aquí irá el historial de entradas y salidas.</p>
+        </section>
+
+        <!-- Vista: Reportes -->
+        <section id="view-reportes" class="dashboard-view">
+            <h2 class="view-title">Reportes</h2>
+            <p class="view-placeholder">Aquí irán los gráficos y reportes exportables.</p>
+        </section>
+
+    </main>
+</div>
+
+<script>
+    function mostrarVista(nombreVista, elementoClickeado) {
+        document.querySelectorAll('.dashboard-view').forEach(function (vista) {
+            vista.classList.remove('active-view');
+        });
+        document.getElementById('view-' + nombreVista).classList.add('active-view');
+        document.querySelectorAll('.sidebar-link').forEach(function (btn) {
+            btn.classList.remove('active');
+        });
+        elementoClickeado.classList.add('active');
+    }
+</script>
+</body>
+</html>
