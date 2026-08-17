@@ -25,9 +25,22 @@ public class HomeController : Controller
     {
         return View();
     }
+    public IActionResult Register()
+    {
+        return View();
+    }
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+    // Probar conexion a Tienda_ropa
+    public IActionResult ProbarConexion([FromServices] Datos.ConexDb conexion)
+    {
+        bool conectado = conexion.ProbarConexion();
+        
+        Console.WriteLine(conectado ? "✅ Conexión exitosa" : "❌ Falló la conexión");
+        
+        return Content(conectado ? "✅ Conexión exitosa" : "❌ Falló la conexión");
     }
 }
