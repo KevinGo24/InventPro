@@ -1,0 +1,53 @@
+@{
+    ViewData["Title"] = "Registro";
+}
+<!DOCTYPE html>
+
+<div class="auth-container">
+    <div class="auth-header">Crear Cuenta en InventPro</div>
+    <div class="auth-body">
+        <div class="auth-image">
+            <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=600&q=80" alt="Registro InventPro" />
+        </div>
+        <div class="auth-form">
+            <h4>Únete a InventPro</h4>
+
+            @if (ViewBag.Error != null)
+            {
+                <div class="alert-error">@ViewBag.Error</div>
+            }
+
+            <form method="post" asp-action="Register" asp-controller="Home">
+                <div class="form-group">
+                    <label>Nombre de usuario</label>
+                    <div class="input-icon">
+                        <i class="bi bi-person"></i>
+                        <input type="text" name="Username" placeholder="usuario123" required />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Correo electrónico</label>
+                    <div class="input-icon">
+                        <i class="bi bi-envelope"></i>
+                        <input type="email" name="Email" placeholder="ejemplo@correo.com" required />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Contraseña</label>
+                    <div class="input-icon">
+                        <i class="bi bi-lock"></i>
+                        <input type="password" name="Password" placeholder="********" required />
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-registrar">Registrarse</button>
+            </form>
+
+            <div class="link-login">
+                ¿Ya tienes cuenta? <a asp-action="Login" asp-controller="Home">Inicia sesión aquí</a>
+            </div>
+        </div>
+    </div>
+</div>
